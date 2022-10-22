@@ -43,6 +43,7 @@ export const loginSlice = createSlice({
         state.status = 'idle';
         state.isInitialized = action?.payload?.is_active;
         state.user = action?.payload;
+        console.log(action.payload);
       });
   },
 });

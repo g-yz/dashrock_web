@@ -58,3 +58,7 @@
   backdrop-filter: blur(35px);
   border-radius: 10px 10px 0 0;
 }
+
+iframe {
+  border: 0;
+}

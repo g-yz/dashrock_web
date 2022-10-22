@@ -1,7 +1,7 @@
 import { logout } from '../features/auth/loginSlice';
 import { selectUser } from '../features/auth/loginSlice';
-import logo from '../logo.svg';
 import { MenuStyles } from './MenuStyles';
+import DashboardIcon from '@mui/icons-material/Dashboard';
 import Logout from '@mui/icons-material/Logout';
 import {
   Box,
@@ -47,9 +47,9 @@ const Header = () => {
 
   return (
     <>
-      <Box sx={{ display: 'flex', justifyContent: 'space-between' }} pl={2} pr={2} bgcolor="#222222">
+      <Box sx={{ display: 'flex', justifyContent: 'space-between' }} pl={2} pr={2} bgcolor="black">
         <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-          <img src={logo} alt="logo" width="25px" height="25px" />
+          <DashboardIcon fontSize="medium" style={{ color: '#0094FF' }} />
           <Typography variant="h5" color="#0094FF">
             DashRock
           </Typography>
