@@ -26,13 +26,23 @@ export default function Login() {
       </div>
       <div className={styles.back}>
         <div>
-          <div className={styles.circle}></div>
+          <div className={[styles.circle, styles.ca].join(' ')}></div>
           <div className={styles.space}></div>
         </div>
         <div>
           <div className={styles.space}></div>
-          <div className={styles.circle}></div>
+          <div className={[styles.circle, styles.cb].join(' ')}></div>
         </div>
+      </div>
+      <div>
+        <div className={styles.circlec}></div>
+        <div className={styles.circled}></div>
+        <div className={styles.circlee}></div>
+        <div className={styles.circlef}></div>
+        <div className={styles.circleg}></div>
+        <div className={styles.circleh}></div>
+        <div className={styles.circlei}></div>
+        <div className={styles.circlek}></div>
       </div>
     </Box>
   );
