@@ -61,7 +61,7 @@ const Header = () => {
             TabIndicatorProps={{ sx: { backgroundColor: '#0094FF', height: '3px' } }}
             textColor="secondary"
           >
-            <LinkTab label="Rocket App" to="/" textColor={'secondary'} />
+            <LinkTab label="Home" to="/" textColor={'secondary'} />
             <LinkTab label="About" to="/about" />
           </Tabs>
         </Box>

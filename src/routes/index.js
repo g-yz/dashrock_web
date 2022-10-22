@@ -9,9 +9,14 @@ const Dashboard = React.lazy(() => import('../pages/Dashboard'));
 
 const Router = () => {
   const isInternalClient = useSelector(selectIsInternalClient);
-  const internalDashboard =
+  const externalDashboard =
     'https://datastudio.google.com/embed/u/1/reporting/41ad4f31-d83b-4702-a181-9ab285d88ad6/page/p_8nylp4oizc';
-  const externalDashboard = 'https://datastudio.google.com/gallery';
+
+  const getRouteBygroup = group => {
+    const api_base_report = 'https://datastudio.google.com/embed/reporting';
+    const api_report = '/64d990aa-6f13-459d-812f-d936986d2c28/page/8mn5C?';
+    return api_base_report + api_report + 'params=%7B%22ds8.userlogueadogrupo%22:%22' + group + '%22%7D';
+  };
 
   return (
     <BrowserRouter>
@@ -19,7 +24,7 @@ const Router = () => {
       <React.Suspense fallback={<h1>Loading All Routes</h1>}>
         <Routes>
           {isInternalClient ? (
-            <Route path="/" element={<Dashboard path={internalDashboard} />} />
+            <Route path="/" element={<Dashboard path={getRouteBygroup('Vip1')} />} />
           ) : (
             <Route path="/" element={<Dashboard path={externalDashboard} />} />
           )}
