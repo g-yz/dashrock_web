@@ -5,3 +5,6 @@
   justify-content: center;
   gap: 2rem;
 }
+.input {
+  background: white;
+}
