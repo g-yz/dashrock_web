@@ -45,18 +45,21 @@ const Header = () => {
 
   return (
     <>
-      <Box sx={{ display: 'flex', justifyContent: 'space-between' }} pl={2} pr={2} bgcolor="#e3f2fd">
+      <Box sx={{ display: 'flex', justifyContent: 'space-between' }} pl={2} pr={2} bgcolor="#222222">
         <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
           <img src={logo} alt="logo" width="25px" height="25px" />
-          <Typography variant="h5" color="primary.dark">
-            Rocket
+          <Typography variant="h5" color="#0094FF">
+            DashRock
           </Typography>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-          <Tabs value={value} onChange={handleChange}>
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            TabIndicatorProps={{ sx: { backgroundColor: '#0094FF', height: '3px' } }}
+            textColor="secondary"
+          >
             <LinkTab label="Rocket App" to="/" textColor={'secondary'} />
-            <LinkTab label="Pandas" to="/pandas" />
-            <LinkTab label="Cats" to="/cats" />
             <LinkTab label="About" to="/about" />
           </Tabs>
         </Box>

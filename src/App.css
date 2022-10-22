@@ -22,6 +22,11 @@
   font-size: calc(10px + 2vmin);
 }
 
+.App-description {
+  color: white;
+  width: 500px;
+}
+
 .App-link {
   color: rgb(112, 76, 182);
 }
@@ -41,4 +46,15 @@
   min-height: 100vh;
   width: 100vw;
   background: #222222;
+}
+
+.MuiTabs-flexContainer > .MuiButtonBase-root {
+  color: white !important;
+}
+
+.MuiTabs-flexContainer > .Mui-selected {
+  background: rgba(255, 255, 255, 0.1) !important;
+  filter: drop-shadow(2px 4px 30px rgba(0, 0, 0, 0.1));
+  backdrop-filter: blur(35px);
+  border-radius: 10px 10px 0 0;
 }
