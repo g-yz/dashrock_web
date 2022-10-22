@@ -2,7 +2,11 @@ export const MenuStyles = {
   elevation: 0,
   sx: {
     overflow: 'visible',
-    filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+    background: 'linear-gradient(62.42deg, rgba(255, 255, 255, 0.1) 20.61%, rgba(255, 255, 255, 0) 82.27%)',
+    filter: 'drop-shadow(2px 4px 30px rgba(0, 0, 0, 0.1))',
+    backdropFilter: 'blur(35px)',
+    borderRadius: '14px',
+    color: 'white',
     mt: 1.5,
     '& .MuiAvatar-root': {
       width: 32,
@@ -18,7 +22,7 @@ export const MenuStyles = {
       right: 14,
       width: 10,
       height: 10,
-      bgcolor: 'background.paper',
+      bgcolor: 'rgba(255, 255, 255, 0.1)',
       transform: 'translateY(-50%) rotate(45deg)',
       zIndex: 0,
     },

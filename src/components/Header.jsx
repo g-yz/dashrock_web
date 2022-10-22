@@ -1,4 +1,5 @@
 import { logout } from '../features/auth/loginSlice';
+import { selectUser } from '../features/auth/loginSlice';
 import logo from '../logo.svg';
 import { MenuStyles } from './MenuStyles';
 import Logout from '@mui/icons-material/Logout';
@@ -16,7 +17,7 @@ import {
   Typography,
 } from '@mui/material';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 function LinkTab(props) {
@@ -42,6 +43,7 @@ const Header = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  const currentUser = useSelector(selectUser);
 
   return (
     <>
@@ -73,7 +75,7 @@ const Header = () => {
               aria-haspopup="true"
               aria-expanded={open ? 'true' : undefined}
             >
-              <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
+              <Avatar sx={{ width: 32, height: 32, bgcolor: '#0094FF' }}>{currentUser?.full_name[0]}</Avatar>
             </IconButton>
           </Tooltip>
         </Box>
@@ -89,12 +91,13 @@ const Header = () => {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         <MenuItem>
-          <Avatar /> My account
+          <Avatar sx={{ bgcolor: '#0094FF' }}>{currentUser?.full_name[0]}</Avatar>
+          {currentUser?.full_name}
         </MenuItem>
         <Divider />
         <MenuItem onClick={handleLogout}>
           <ListItemIcon>
-            <Logout fontSize="small" />
+            <Logout fontSize="small" style={{ color: 'white' }} />
           </ListItemIcon>
           Logout
         </MenuItem>

@@ -3,6 +3,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   isInitialized: false,
+  user: { is_internal_client: false },
   status: 'idle',
 };
 
@@ -41,6 +42,7 @@ export const loginSlice = createSlice({
       .addCase(verifyCredentials.fulfilled, (state, action) => {
         state.status = 'idle';
         state.isInitialized = action?.payload?.is_active;
+        state.user = action?.payload;
       });
   },
 });
@@ -48,5 +50,7 @@ export const loginSlice = createSlice({
 export const { logout } = loginSlice.actions;
 
 export const selectIsInitialized = state => state.login.isInitialized;
+export const selectIsInternalClient = state => state.login.user.is_internal_client;
+export const selectUser = state => state.login.user;
 
 export default loginSlice.reducer;
