@@ -26,7 +26,7 @@ export default function LoginForm() {
   });
 
   return (
-    <Box p={1}>
+    <Box p={2}>
       <form onSubmit={formik.handleSubmit} className={styles.form}>
         <TextField
           fullWidth
@@ -71,7 +71,7 @@ export default function LoginForm() {
             },
           }}
         />
-        <Button color="primary" variant="contained" type="submit">
+        <Button sx={{ background: '#0094ff' }} variant="contained" type="submit">
           Login
         </Button>
       </form>

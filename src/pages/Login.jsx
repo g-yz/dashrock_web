@@ -10,7 +10,7 @@ export default function Login() {
         <Box p={4} sx={{ color: 'text.secondary' }}>
           <Stack direction="row" alignItems="center" sx={{ mb: 4 }}>
             <Box sx={{ flexGrow: 1 }}>
-              <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+              <Box sx={{ display: 'flex', justifyContent: 'center' }} pt={4}>
                 <DashboardIcon fontSize="large" style={{ color: 'white' }} />
                 <Typography variant="h4" gutterBottom align="center" color="white">
                   DashRock
@@ -42,7 +42,7 @@ export default function Login() {
         <div className={styles.circleg}></div>
         <div className={styles.circleh}></div>
         <div className={styles.circlei}></div>
-        <div className={styles.circlek}></div>
+        <div className={styles.circlej}></div>
       </div>
     </Box>
   );
