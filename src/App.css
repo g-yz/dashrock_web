@@ -59,6 +59,10 @@
   border-radius: 10px 10px 0 0;
 }
 
+.MuiFormControl-root > label {
+  color: #0094ff;
+}
+
 iframe {
   border: 0;
 }
