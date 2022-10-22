@@ -76,7 +76,7 @@ const Header = () => {
               aria-expanded={open ? 'true' : undefined}
             >
               <Avatar sx={{ width: 32, height: 32, bgcolor: '#0094FF' }}>
-                {currentUser?.full_name[0] ?? 'M'}
+                {currentUser?.full_name.length > 0 ? currentUser?.full_name[0] : 'M'}
               </Avatar>
             </IconButton>
           </Tooltip>
@@ -93,7 +93,9 @@ const Header = () => {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         <MenuItem>
-          <Avatar sx={{ bgcolor: '#0094FF' }}>{currentUser?.full_name[0] ?? 'M'}</Avatar>
+          <Avatar sx={{ bgcolor: '#0094FF' }}>
+            {currentUser?.full_name.length > 0 ? currentUser?.full_name[0] : 'M'}
+          </Avatar>
           {currentUser?.full_name}
         </MenuItem>
         <Divider />
