@@ -1,8 +1,44 @@
 .wrapper {
-  background: rgba(88, 130, 193, 0.48);
-  backdrop-filter: blur(12.5px);
-  /* Note: backdrop-filter has minimal browser support */
+  background: linear-gradient(62.42deg, rgba(255, 255, 255, 0.1) 20.61%, rgba(255, 255, 255, 0) 82.27%);
+  filter: drop-shadow(2px 4px 30px rgba(0, 0, 0, 0.1));
+  backdrop-filter: blur(35px);
+  border-radius: 14px;
+  z-index: 1;
+}
+.back {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+}
+.back > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 150px;
+}
+.circle {
+  width: 195px;
+  height: 195px;
+  background: #0094ff;
+  border-radius: 50%;
+  animation: move 5s infinite;
+}
+.space {
+  width: 195px;
+  height: 195px;
+  /* background: #0094ff; */
+  border-radius: 50%;
+}
 
-  border-radius: 40px;
-  border: 2px solid rgba(88, 130, 193, 0.68);
+@keyframes move {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

@@ -10,15 +10,25 @@ export default function Login() {
           <Stack direction="row" alignItems="center" sx={{ mb: 4 }}>
             <Box sx={{ flexGrow: 1 }}>
               <Typography variant="h4" gutterBottom align="center" color="white">
-                Rocket App
+                DashRock
               </Typography>
-              <Typography sx={{ color: 'text.secondary' }} align="center">
+              <Typography align="center" color="white">
                 Enter your details below.
               </Typography>
             </Box>
           </Stack>
           <LoginForm />
         </Box>
+      </div>
+      <div className={styles.back}>
+        <div>
+          <div className={styles.circle}></div>
+          <div className={styles.space}></div>
+        </div>
+        <div>
+          <div className={styles.space}></div>
+          <div className={styles.circle}></div>
+        </div>
       </div>
     </Box>
   );

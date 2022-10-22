@@ -39,6 +39,15 @@ export default function LoginForm() {
           onBlur={formik.handleBlur}
           error={formik.touched.username && Boolean(formik.errors.username)}
           helperText={formik.touched.username && formik.errors.username}
+          InputProps={{
+            sx: {
+              '& input': {
+                color: 'white',
+                background: 'rgba(255, 255, 255, 0.3)',
+                borderRadius: '4px',
+              },
+            },
+          }}
         />
         <TextField
           fullWidth
@@ -52,6 +61,15 @@ export default function LoginForm() {
           onBlur={formik.handleBlur}
           error={formik.touched.password && Boolean(formik.errors.password)}
           helperText={formik.touched.password && formik.errors.password}
+          InputProps={{
+            sx: {
+              '& input': {
+                color: 'white',
+                background: 'rgba(255, 255, 255, 0.3)',
+                borderRadius: '4px',
+              },
+            },
+          }}
         />
         <Button color="primary" variant="contained" type="submit">
           Login
