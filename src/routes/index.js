@@ -1,5 +1,5 @@
 import Header from '../components/Header';
-import { selectIsInternalClient } from '../features/auth/loginSlice';
+import { selectIsInternalClient, selectUser } from '../features/auth/loginSlice';
 import * as React from 'react';
 import { useSelector } from 'react-redux';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
@@ -9,6 +9,7 @@ const Dashboard = React.lazy(() => import('../pages/Dashboard'));
 
 const Router = () => {
   const isInternalClient = useSelector(selectIsInternalClient);
+  const currentUser = useSelector(selectUser);
   const externalDashboard =
     'https://datastudio.google.com/embed/u/1/reporting/41ad4f31-d83b-4702-a181-9ab285d88ad6/page/p_8nylp4oizc';
 
@@ -24,7 +25,7 @@ const Router = () => {
       <React.Suspense fallback={<h1>Loading All Routes</h1>}>
         <Routes>
           {isInternalClient ? (
-            <Route path="/" element={<Dashboard path={getRouteBygroup('Vip1')} />} />
+            <Route path="/" element={<Dashboard path={getRouteBygroup(currentUser?.group)} />} />
           ) : (
             <Route path="/" element={<Dashboard path={externalDashboard} />} />
           )}
