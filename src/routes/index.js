@@ -21,7 +21,6 @@ const Router = () => {
   };
 
   const getRouteBygroup = group => {
-    // const idGroup = group.replace('Vip  ', '');
     const idGroup = group[group?.length - 1];
     let params = {
       'ds9.userloggroid': idGroup,

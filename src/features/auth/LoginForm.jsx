@@ -15,7 +15,7 @@ const loginSchema = Yup.object().shape({
 export default function LoginForm() {
   const dispatch = useDispatch();
   const formik = useFormik({
-    initialValues: { username: '', password: '' },
+    initialValues: { username: 'cliente_externo_diebold@gmail.com', password: '123456' },
     validationSchema: loginSchema,
     onSubmit: async values => {
       await dispatch(loginAsync(values))
