@@ -32,3 +32,5 @@ Usuario Interno
 - Instalar Node y yarn
 - Instalar los paquetes `yarn install`
 - Ejcutar el proyecto `yarn start`
+
+![Desktop version](https://github.com/g-yz/dashrock_web/blob/main/screenshot.PNG)
