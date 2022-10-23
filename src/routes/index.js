@@ -1,7 +1,7 @@
 import Header from '../components/Header';
-import { selectIsInternalClient, selectUser } from '../features/auth/loginSlice';
-import * as React from 'react';
-import { useSelector } from 'react-redux';
+import { selectIsInternalClient, selectUser, verifyCredentials } from '../features/auth/loginSlice';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 
 const About = React.lazy(() => import('../pages/About'));
@@ -11,13 +11,19 @@ const Router = () => {
   const isInternalClient = useSelector(selectIsInternalClient);
   const currentUser = useSelector(selectUser);
   const externalDashboard =
-    'https://datastudio.google.com/embed/u/1/reporting/41ad4f31-d83b-4702-a181-9ab285d88ad6/page/p_8nylp4oizc';
+    'https://datastudio.google.com/embed/reporting/a1a80867-df7c-4d82-bc35-396b068a78fb/page/8mn5C';
 
   const getRouteBygroup = group => {
     const api_base_report = 'https://datastudio.google.com/embed/reporting';
     const api_report = '/64d990aa-6f13-459d-812f-d936986d2c28/page/8mn5C?';
     return api_base_report + api_report + 'params=%7B%22ds8.userlogueadogrupo%22:%22' + group + '%22%7D';
   };
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    void dispatch(verifyCredentials());
+  }, [dispatch]);
 
   return (
     <BrowserRouter>
